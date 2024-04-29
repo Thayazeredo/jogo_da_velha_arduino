@@ -32,11 +32,11 @@
     // Verificar se a posiçaõ "jogada" é valida
     // Convertr a jogada texto em dois interos linha e coluna
     do {
-        window.alert(tabuleiro[0].ToString() + tabuleiro[1] + tabuleiro[2]);
-        window.alert(tabuleiro[3].ToString() + tabuleiro[4] + tabuleiro[5]);
-        window.alert(tabuleiro[6].ToString() + tabuleiro[7] + tabuleiro[8]);
+        console.log(tabuleiro[0].ToString() + tabuleiro[1] + tabuleiro[2]);
+        console.log(tabuleiro[3].ToString() + tabuleiro[4] + tabuleiro[5]);
+        console.log(tabuleiro[6].ToString() + tabuleiro[7] + tabuleiro[8]);
         jogada = "";
-        window.alert("Digite a posição da sua peça, JOGADOR" + jogadorDaVez);
+        console.log("Digite a posição da sua peça, JOGADOR" + jogadorDaVez);
         jogada = window.prompt('Enter a value for jogada');
         linha = parseInt(jogada.charAt(0));
         coluna = parseInt(jogada.charAt(2));
@@ -65,15 +65,16 @@
         } else {
 
             // informar ao Jogador 1 que a posição está preenchida, é invalida e ele precisa informar uma posição valida
-            window.alert("Posição ocupada, jogue novamente!");
+            console.log
+("Posição ocupada, jogue novamente!");
         }
 
         // verificar o tabuleiro, se houver vencedor ou empate, finalizar o jogo
     } while (!haVencedor && velha <= 9);
     if (haVencedor) {
-        window.alert("PARABENS POR SUA VITORIA, JOGADOR!" + jogadorDaVez);
+        console.log("PARABENS POR SUA VITORIA, JOGADOR!" + jogadorDaVez);
     } else {
-        window.alert("Deu VELHA!");
+        console.log("Deu VELHA!");
     }
 }
 
@@ -117,7 +118,7 @@ function validaPosicao(entrada) {
     var entradaValida;
 
     entradaValida = false;
-    window.alert(entrada.length());
+    console.lo(entrada.length());
     if (entrada.length() == 3) {
         if (entrada.charAt(0) == "0" || entrada.charAt(0) == "1" || entrada.charAt(0) == "2") {
             if (entrada.charAt(2) == "0" || entrada.charAt(2) == "1" || entrada.charAt(2) == "2") {
