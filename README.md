@@ -2,6 +2,7 @@
 
 AUTORA: Thaylini
 DATA: 29/04/2024
+
 INTRODUCAO: Ola pessoas, o jogo da velha realizado no flogorithm sempre bem conhecido em todos os lugares, mas geralmente de sua forma classica ultilizando papel e caneta disputado geralmente entre amigos, aposto que voce ja jogou pelo menos uma vez na sua vida ou ja ouviu falar sobre e sabe o basico das regras, mas tambem sendo possivel aparecer algumas adaptacoes sobre o jogo
 
 CONTEXTUALIZACAO DO PROJETO: e um jogo que conciste em ter dois jogadores ou mais de forma adaptada para disputarem, o objetivo e completar uma linha/coluna com suas pecas sem o seu adversario atrapalhar e obiter uma vitoria ou empate (velha) para assim haver um vencedor, caso haja empate sera declarado velha
