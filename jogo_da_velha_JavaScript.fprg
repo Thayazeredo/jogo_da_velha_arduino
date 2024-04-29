@@ -1,0 +1,131 @@
+﻿function main() {
+    // Criar o tabuleiro e os jogadores, zerar as variaveis
+    // 0: Posição
+    // vazia
+    // 1: jogada Posição do jogador 1
+    // 2: Jogada Posição do jogador 2
+    var haVencedor;
+
+    haVencedor = false;
+    var tabuleiro = createArray(9);
+    var linha;
+    var coluna;
+    var jogada;
+    var velha;
+
+    velha = 1;
+
+    // Limapara/Zerar o tabuleiro
+    var iNDEX;
+
+    for (iNDEX = 0; iNDEX <= 8; iNDEX++) {
+        tabuleiro[iNDEX] = 0;
+    }
+    var jogadorDaVez;
+
+    jogadorDaVez = 1;
+
+    // iniciar o jogo, definir quem joga primeiro
+    // Anotar/registrar a jogada do primeiro jogador
+    jogada = "";
+
+    // Verificar se a posiçaõ "jogada" é valida
+    // Convertr a jogada texto em dois interos linha e coluna
+    do {
+        window.alert(tabuleiro[0].ToString() + tabuleiro[1] + tabuleiro[2]);
+        window.alert(tabuleiro[3].ToString() + tabuleiro[4] + tabuleiro[5]);
+        window.alert(tabuleiro[6].ToString() + tabuleiro[7] + tabuleiro[8]);
+        jogada = "";
+        window.alert("Digite a posição da sua peça, JOGADOR" + jogadorDaVez);
+        jogada = window.prompt('Enter a value for jogada');
+        linha = parseInt(jogada.charAt(0));
+        coluna = parseInt(jogada.charAt(2));
+
+        // Verificar se a opição 'jogada' é valida
+        // Converter a jogada texto em dois inteiros linha e coluna
+        if (tabuleiro[3 * linha + coluna] == 0) {
+            tabuleiro[3 * linha + coluna] = jogadorDaVez;
+            if (tabuleiro[0] == jogadorDaVez && tabuleiro[1] == jogadorDaVez && tabuleiro[2] == jogadorDaVez || tabuleiro[3] == jogadorDaVez && tabuleiro[4] == jogadorDaVez && tabuleiro[5] == jogadorDaVez || tabuleiro[6] == jogadorDaVez && tabuleiro[7] == jogadorDaVez && tabuleiro[8] == jogadorDaVez) {
+                haVencedor = true;
+            } else {
+                if (tabuleiro[0] == jogadorDaVez && tabuleiro[3] == jogadorDaVez && tabuleiro[6] == jogadorDaVez || tabuleiro[1] == 1 && tabuleiro[4] == jogadorDaVez && tabuleiro[7] == jogadorDaVez || tabuleiro[2] == jogadorDaVez && tabuleiro[5] == jogadorDaVez && tabuleiro[8] == jogadorDaVez) {
+                    haVencedor = true;
+                } else {
+                    if (tabuleiro[0] == jogadorDaVez && tabuleiro[4] == jogadorDaVez && tabuleiro[8] == jogadorDaVez || tabuleiro[2] == jogadorDaVez || tabuleiro[4] == jogadorDaVez && tabuleiro[6] == jogadorDaVez) {
+                        haVencedor = true;
+                    } else {
+                        if (jogadorDaVez == 1) {
+                            jogadorDaVez = 2;
+                        } else {
+                            jogadorDaVez = 1;
+                        }
+                    }
+                }
+            }
+        } else {
+
+            // informar ao Jogador 1 que a posição está preenchida, é invalida e ele precisa informar uma posição valida
+            window.alert("Posição ocupada, jogue novamente!");
+        }
+
+        // verificar o tabuleiro, se houver vencedor ou empate, finalizar o jogo
+    } while (!haVencedor && velha <= 9);
+    if (haVencedor) {
+        window.alert("PARABENS POR SUA VITORIA, JOGADOR!" + jogadorDaVez);
+    } else {
+        window.alert("Deu VELHA!");
+    }
+}
+
+function validajogada(entrada) {
+    var entradaValida;
+
+    entradaValida = false;
+    var jogadorDaVez;
+
+    jogadorDaVez = 1;
+    var haVencedor;
+
+    haVencedor = false;
+    var iNDEX;
+    var tabuleiro;
+
+    tabuleiro = 1;
+    for (iNDEX = 0; iNDEX <= 8; iNDEX++) {
+        tabuleiro[iNDEX] = 0;
+    }
+    if (tabuleiro[0] == jogadorDaVez && tabuleiro[1] == jogadorDaVez && tabuleiro[2] == jogadorDaVez || tabuleiro[3] == jogadorDaVez && tabuleiro[4] == jogadorDaVez && tabuleiro[5] == jogadorDaVez || tabuleiro[6] == jogadorDaVez && tabuleiro[7] == jogadorDaVez && tabuleiro[8] == jogadorDaVez) {
+        haVencedor = true;
+    } else {
+        if (tabuleiro[0] == jogadorDaVez && tabuleiro[3] == jogadorDaVez && tabuleiro[6] == jogadorDaVez || tabuleiro[1] == 1 && tabuleiro[4] == jogadorDaVez && tabuleiro[7] == jogadorDaVez || tabuleiro[2] == jogadorDaVez && tabuleiro[5] == jogadorDaVez && tabuleiro[8] == jogadorDaVez) {
+            haVencedor = true;
+        } else {
+            if (tabuleiro[0] == jogadorDaVez && tabuleiro[4] == jogadorDaVez && tabuleiro[8] == jogadorDaVez || tabuleiro[2] == jogadorDaVez || tabuleiro[4] == jogadorDaVez && tabuleiro[6] == jogadorDaVez) {
+                haVencedor = true;
+            } else {
+                if (jogadorDaVez == 1) {
+                    jogadorDaVez = 2;
+                } else {
+                    jogadorDaVez = 1;
+                }
+            }
+        }
+    }
+}
+
+function validaPosicao(entrada) {
+    var entradaValida;
+
+    entradaValida = false;
+    window.alert(entrada.length());
+    if (entrada.length() == 3) {
+        if (entrada.charAt(0) == "0" || entrada.charAt(0) == "1" || entrada.charAt(0) == "2") {
+            if (entrada.charAt(2) == "0" || entrada.charAt(2) == "1" || entrada.charAt(2) == "2") {
+                entradaValida = true;
+            }
+        }
+    }
+}
+
+function verifiqueString() {
+}
